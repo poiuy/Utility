@@ -1,0 +1,28 @@
+javascript:(
+  	(function(){
+			function loadjscssfile(filename, filetype){
+				 if (filetype=="js"){ 
+				  var fileref=document.createElement('script');
+				  fileref.setAttribute("type","text/javascript");
+				  fileref.setAttribute("src", filename);
+				  document.getElementsByTagName("body")[0].appendChild(fileref);
+				 }
+				 else if (filetype=="css"){ 
+				  var fileref=document.createElement("link");
+				  fileref.setAttribute("rel", "stylesheet");
+				  fileref.setAttribute("type", "text/css");
+				  fileref.setAttribute("href", filename);
+				  document.getElementsByTagName("body")[0].appendChild(fileref);
+				 }
+				 else if (filetype=="screen"){ 
+					  var fileref=document.createElement("link");
+					  fileref.setAttribute("rel", "stylesheet");
+					  fileref.setAttribute("type", "text/css");
+					  fileref.setAttribute("href", filename);
+					  fileref.setAttribute("media", "screen");
+					  document.getElementsByTagName("body")[0].appendChild(fileref);
+				} 
+			}
+			loadjscssfile("//www.point8.me/workarea/BlogDataProcessor/js/temp.js?random="+Math.random()*1000,"js");
+		})()
+)
